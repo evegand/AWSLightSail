@@ -1,15 +1,14 @@
 const express = require("express"); // constante con libreria de express
 const app = express();
-const port = 3000;
 
 app.use(express.json()); // Librerias de json
 
 const students = [
-    {id: 1, name: 'Jair', age: 23, active: true},
-    {id: 2, name: 'Erubey', age: 23, active: true},
-    {id: 3, name: 'Mariana', age: 23, active: true},
-    {id: 4, name: 'Eve', age: 25, active: true}
-]
+    {id: 1, name: 'Jair', age: 22, active: true},
+    {id: 2, name: 'Erubey', age: 23, active: false},
+    {id: 3, name: 'Mariana', age: 24, active: false},
+    {id: 4, name: 'Eve', age: 25, active: true},
+];
 
 /** Home page */
 app.get('/', (req, res) => {
@@ -49,6 +48,8 @@ app.delete('api/students/:id', (req, res) => {
     index.splice(index, 1);
     res.send(student);
 })
+
+const port = 3000;
 
 /** Listen */
 app.listen(port, () => {
