@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 });
 
 /** Mostrar estudiantes */
-app.get('api/students', (req, res) => {
+app.get('/api/students', (req, res) => {
     res.send(students);
 });
 
@@ -40,7 +40,7 @@ app.post('/api/students', (req, res) => {
 });
 
 /** Eliminar estudiante */
-app.delete('api/students/:id', (req, res) => {
+app.delete('/api/students/:id', (req, res) => {
     const student = students.find(c => c.id === parseInt(req.params.id));
     if (!student) return res.status(404).send('Estudiante no encontrado');
 
