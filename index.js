@@ -64,7 +64,7 @@ const port = 3000;
 
 /** Listen */
 app.listen(port, () => {
-    console.log(`Escuchando en http://localost:${port}`);
+    console.log(`Escuchando en http://localhost:${port}`);
 });
 
 /*
