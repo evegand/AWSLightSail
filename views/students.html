@@ -15,14 +15,37 @@
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
       crossorigin="anonymous"
     />
-    <title>Hello, the world!</title>
+    <title>Estudiantes</title>
   </head>
   <body>
     <div class="jumbotron">
-        <div class="container"><h1>Hello, the world!</h1></div>
+        <div class="container"><h1>Estudiantes</h1></div>
     </div>
     <div class="ml-3">
-        <div><a href="/api/students" class="btn btn-md btn-primary mr-2">Ver estudiantes</a></div>
+        <div><a href="/home" class="btn btn-md btn-secondary mr-2">Regresar</a></div>
+    </div>
+    <div class="ml-3" ng-controller="Index">
+        <li ng-repeat="student in students">{{student}}</li>
+        <!--
+        <table class="table" ng-repeat="student in students">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+            </tbody>
+        </table>
+        -->
     </div>
 
     <!-- Optional JavaScript -->

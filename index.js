@@ -13,12 +13,21 @@ const students = [
 
 /** Home page */
 app.get('/', (req, res) => {
-    res.send(path.join(__dirname, "views/index.html"));
+    res.sendFile(path.join(__dirname, "views/index.html"));
+});
+
+app.get('/home', (req, res) => {
+    res.sendFile(path.join(__dirname, "views/index.html"));
+});
+
+/** Mostrar estudiantes */
+app.get('/api/students/json', (req, res) => {
+    res.send(students);
 });
 
 /** Mostrar estudiantes */
 app.get('/api/students', (req, res) => {
-    res.send(students);
+    res.sendFile(path.join(__dirname, "views/students.html"));
 });
 
 /** Buscar estudiante por ID */
