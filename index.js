@@ -53,18 +53,17 @@ app.get('/api/students', (req, res) => {
                 <div class="container"><h1>Estudiantes</h1></div>
             </div>
             <div class="ml-3">
-                <div><a href="/home" class="btn btn-md btn-secondary mr-2">Regresar</a></div>
+                <div><a href="/home" class="btn btn-md btn-secondary mr-2 mb-2">Regresar</a></div>
             </div>
-            <div class="ml-3" >
-                <li></li>
-                <table class="table" ng-repeat="student in students">
+            <div class="ml-3">
+                <table class="table">
                     <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Age</th>
-                        <th scope="col"></th>
-                    </tr>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Edad</th>
+                            <th scope="col">Status</th>
+                        </tr>
                     </thead>
             <tbody>`
             students.forEach(element => {
@@ -73,7 +72,7 @@ app.get('/api/students', (req, res) => {
                     <th scope="row">${element.id}</th>
                     <td>${element.name}</td>
                     <td>${element.age}</td>
-                    <td>${element.active}</td>
+                    <td>${element.active ? "Activo" : "Inactivo"}</td>
                 </tr>`
             });{
             }
