@@ -1,4 +1,5 @@
 const express = require("express"); // constante con libreria de express
+const path = require("path");
 const app = express();
 
 app.use(express.json()); // Librerias de json
@@ -12,7 +13,7 @@ const students = [
 
 /** Home page */
 app.get('/', (req, res) => {
-    res.send('Node JS api');
+    res.send(path.join(__dirname, "views/index.html"));
 });
 
 /** Mostrar estudiantes */
