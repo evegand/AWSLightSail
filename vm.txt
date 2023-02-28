@@ -1,0 +1,24 @@
+<VirtualHost _default_:80>
+    ServerAlias *
+    DocumentRoot "/opt/bitnami/projects/myapp/public"
+    <Directory "/opt/bitnami/projects/myapp/public">
+        Require all granted
+    </Directory>
+    ProxyPass / http://localhost:3000/
+    ProxyPassReverse / http://localhost:3000/
+</VirtualHost>
+
+
+<VirtualHost _default_:443>
+    ServerAlias *
+    SSLEngine on
+    SSLCertificateFile "/opt/bitnami/apache/conf/bitnami/certs/server.crt"
+    SSLCertificateKeyFile "/opt/bitnami/apache/conf/bitnami/certs/server.key"
+    DocumentRoot "
+    <Directory "/home/bitnami/htdocs/AWSLightSail">
+        Require all granted
+    </Directory>
+    ProxyPass / http://localhost:3000/
+    ProxyPassReverse / http://localhost:3000/
+</VirtualHost>
+

@@ -1,5 +1,5 @@
 {
-  "name": "Lightsail-Setup-Custom-Domain-SSL",
+  "name": "nodejsapi",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,9 +7,17 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Eve",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
-  }
+    "express": "^4.18.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evegand/AWSLightSail.git"
+  },
+  "bugs": {
+    "url": "https://github.com/evegand/AWSLightSail/issues"
+  },
+  "homepage": "https://github.com/evegand/AWSLightSail#readme"
 }
