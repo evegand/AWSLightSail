@@ -50,12 +50,12 @@ app.get('/api/students', (req, res) => {
         </head>
         <body>
             <div class="jumbotron">
-                <div class="container"><h1>Estudiantes</h1></div>
+                <div class="container"><h1>Estudiantes Registrados</h1></div>
             </div>
             <div class="ml-3">
                 <div><a href="/home" class="btn btn-md btn-secondary mr-2 mb-2">Regresar</a></div>
             </div>
-            <div class="ml-3">
+            <div class="ml-3" style="width:50%;">
                 <table class="table">
                     <thead class="thead-dark">
                         <tr>
@@ -77,7 +77,7 @@ app.get('/api/students', (req, res) => {
             });{
             }
     vista += `
-        </tbody>
+            </tbody>
             </table>
         </div>
 
@@ -107,49 +107,9 @@ app.get('/api/students', (req, res) => {
     });
 });
 
-/** Buscar estudiante por ID */
-app.get('/api/students/:id', (req, res) => {
-    const student = students.find(c => c.id === parseInt(req.params.id));
-    if (!student) return res.status(404).send("Estudiante no encontrado");
-    else res.send(student);
-});
-
-/** Agregar estudiante */
-app.post('/api/students', (req, res) => {
-    const student = {
-        id: students.length + 1,
-        name: req.body.name,
-        age: parseInt(req.body.age),
-        active: (req.body.active === 'true')
-    };
-
-    students.push(student);
-    res.send(student);
-});
-
-/** Eliminar estudiante */
-app.delete('/api/students/:id', (req, res) => {
-    const student = students.find(c => c.id === parseInt(req.params.id));
-    if (!student) return res.status(404).send('Estudiante no encontrado');
-
-    const index = students.indexOf(student);
-    index.splice(index, 1);
-    res.send(student);
-})
-
 const port = 3000;
 
 /** Listen */
 app.listen(port, () => {
     console.log(`Escuchando en http://localhost:${port}`);
 });
-
-/*
-app.get("/", (req, res) => {
-    res.send(`Hello ${port}`);
-});
-
-app.get("/:name", (req, res) => {
-    res.send(`Hello ${req.params.name}`);
-});
-*/
