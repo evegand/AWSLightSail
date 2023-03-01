@@ -1,3 +1,4 @@
+vim /opt/bitnami/apache/conf/vhosts/myapp-http-vhost.conf
 <VirtualHost _default_:80>
     ServerAlias *
     DocumentRoot "/opt/bitnami/projects/myapp/public"
@@ -8,13 +9,13 @@
     ProxyPassReverse / http://localhost:3000/
 </VirtualHost>
 
-
+vim /opt/bitnami/apache/conf/vhosts/myapp-https-vhost.conf
 <VirtualHost _default_:443>
     ServerAlias *
     SSLEngine on
     SSLCertificateFile "/opt/bitnami/apache/conf/bitnami/certs/server.crt"
     SSLCertificateKeyFile "/opt/bitnami/apache/conf/bitnami/certs/server.key"
-    DocumentRoot "
+    DocumentRoot "/home/bitnami/htdocs/AWSLightSail"
     <Directory "/home/bitnami/htdocs/AWSLightSail">
         Require all granted
     </Directory>
@@ -22,3 +23,4 @@
     ProxyPassReverse / http://localhost:3000/
 </VirtualHost>
 
+sudo /opt/bitnami/ctlscript.sh restart apache
