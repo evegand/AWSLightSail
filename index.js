@@ -102,7 +102,6 @@ app.get('/api/students', (req, res) => {
         </html>`
     fs.writeFile('views/students.html', vista, (err) => {
         if (err) throw err;
-        console.log('Archivo actualizado Satisfactoriamente');
         res.sendFile(path.join(__dirname, "views/students.html"));
     });
 });
